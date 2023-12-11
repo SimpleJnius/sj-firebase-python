@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "sj-firebase-python"
+version = "0.1.0"
+description = ""
+authors = ["Kenechukwu Akubue <kengoon19@gmail.com>"]
+readme = "README.md"
+packages = [{include = "sjfirebase"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+kvdroid = {url = "https://github.com/kvdroid/Kvdroid/archive/refs/heads/master.zip"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
