@@ -3,6 +3,7 @@ from jnius import PythonJavaClass, java_method
 
 class OnCompleteListener(PythonJavaClass):
     __javainterfaces__ = ["com/google/android/gms/tasks/OnCompleteListener"]
+    __javacontext__ = "app"
 
     def __init__(self, callback):
         super().__init__()

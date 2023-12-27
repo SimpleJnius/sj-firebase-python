@@ -1,4 +1,4 @@
-from jnius import JavaClass, MetaJavaClass, JavaMethod
+from jnius import JavaClass, MetaJavaClass, JavaStaticMethod
 from sjfirebase import package_path
 
 __all__ = ("SJFirebaseFirestore", )
@@ -6,4 +6,4 @@ __all__ = ("SJFirebaseFirestore", )
 
 class SJFirebaseFirestore(JavaClass, metaclass=MetaJavaClass):
     __javaclass__ = f"{package_path}SJFirebaseFirestore"
-    get_db = JavaMethod("()Lcom/google/firebase/firestore/FirebaseFirestore;")
+    get_db = JavaStaticMethod("()Lcom/google/firebase/firestore/FirebaseFirestore;")
