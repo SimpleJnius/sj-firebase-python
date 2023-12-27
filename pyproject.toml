@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "sj-firebase-python"
-version = "0.1.0"
-description = ""
+name = "sjfirebase"
+version = "1.0.0"
+description = "Port firebase to python"
 authors = ["Kenechukwu Akubue <kengoon19@gmail.com>"]
 readme = "README.md"
 packages = [{include = "sjfirebase"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-kvdroid = {url = "https://github.com/kvdroid/Kvdroid/archive/refs/heads/master.zip"}
+kvdroid = "^0.3.0"
 
 
 [build-system]
