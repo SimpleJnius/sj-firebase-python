@@ -1,5 +1,7 @@
 from jnius import PythonJavaClass, java_method
 
+__all__ = ("OnCompleteListener", )
+
 
 class OnCompleteListener(PythonJavaClass):
     __javainterfaces__ = ["com/google/android/gms/tasks/OnCompleteListener"]
