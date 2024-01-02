@@ -13,4 +13,4 @@ class OnCompleteListener(PythonJavaClass):
 
     @java_method('(Lcom/google/android/gms/tasks/Task;)V')
     def onComplete(self, task):
-        self.callback(task.isSuccessful())
+        self.callback(task)
