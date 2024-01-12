@@ -60,7 +60,7 @@ First, obtain an instance of this class by calling `get_instance`
 class sjfirebase.jclass.database.SJFirebaseDatabase
 ```
 The entry point for accessing a Firebase Database. 
-You can get an instance by calling getInstance. 
+You can get an instance by calling `get_db`. 
 To access a location in the database and read or write data, use `get_ref`
 
 **methods**
