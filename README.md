@@ -13,6 +13,8 @@ To address this limitation, a fork of python-for-android has been developed to i
 To implement these changes in your `buildozer.spec` file, 
 make adjustments to the specified section using the provided values below:
 ```properties
+android.api = 34
+android.enable_androidx = True
 android.gradle_dependencies = io.github.simplejnius:sjfirebase:1.0.0,
     com.google.firebase:firebase-auth,com.google.firebase:firebase-database,
     com.google.firebase:firebase-firestore,com.google.firebase:firebase-storage,
@@ -115,4 +117,3 @@ Listener called when a Task completes.
 **methods**
 - onComplete
 ##### Visit [OnCompleteListener Documentation](https://developers.google.com/android/reference/com/google/android/gms/tasks/OnCompleteListener) for more API
-
