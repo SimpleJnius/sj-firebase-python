@@ -117,3 +117,13 @@ Listener called when a Task completes.
 **methods**
 - onComplete
 ##### Visit [OnCompleteListener Documentation](https://developers.google.com/android/reference/com/google/android/gms/tasks/OnCompleteListener) for more API
+
+#### ValueEventListener
+```python
+class sjfirebase.jinterface.oncomplete.ValueEventListener
+```
+
+**methods**
+- onDataChange
+- onCancelled
+##### Visit [ValueEventListener Documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/database/ValueEventListener) for more API
