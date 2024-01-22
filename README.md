@@ -90,6 +90,22 @@ as well as to manage that user's authentication state.
 - profile_change_request_builder
 ##### Visit [FirebaseUser Documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/auth/FirebaseUser) for more API
 
+#### SJFirebaseStorage
+```python
+class sjfirebase.jclass.user.SJFirebaseStorage
+```
+FirebaseStorage is a service that supports uploading and downloading large objects
+to Google Cloud Storage. Pass a custom instance of FirebaseApp to get_instance which
+will initialize it with a storage location (bucket) specified via setStorageBucket.
+
+Otherwise, if you call getReference without a FirebaseApp, the FirebaseStorage instance
+will initialize with the default FirebaseApp obtainable from get_instance. The storage
+location in this case will come the JSON configuration file downloaded from the web
+
+**methods**
+- get_instance
+##### Visit [FirebaseStorage Documentation](https://firebase.google.com/docs/reference/android/com/google/firebase/storage/FirebaseStorage) for more API
+
 #### OnCompleteListener
 ```python
 class sjfirebase.jinterface.oncomplete.OnCompleteListener
@@ -99,3 +115,4 @@ Listener called when a Task completes.
 **methods**
 - onComplete
 ##### Visit [OnCompleteListener Documentation](https://developers.google.com/android/reference/com/google/android/gms/tasks/OnCompleteListener) for more API
+
