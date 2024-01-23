@@ -1,5 +1,12 @@
 # sj-firebase-python
-Port Firebase to Python
+ Implement Firebase Java SDK in Python
+
+*[Firebase](https://firebase.google.com/)*
+> Make your app the
+> best it can be
+> 
+> Firebase is an app development platform that helps you build and grow apps and games users love. 
+> Backed by Google and trusted by millions of businesses around the world.
 
 ## Usage
 ### Buildozer Android project
@@ -110,7 +117,7 @@ location in this case will come the JSON configuration file downloaded from the 
 
 #### OnCompleteListener
 ```python
-class sjfirebase.jinterface.oncomplete.OnCompleteListener
+class sjfirebase.jinterface.google.OnCompleteListener
 ```
 Listener called when a Task completes.
 
@@ -120,7 +127,7 @@ Listener called when a Task completes.
 
 #### ValueEventListener
 ```python
-class sjfirebase.jinterface.oncomplete.ValueEventListener
+class sjfirebase.jinterface.firebase.ValueEventListener
 ```
 
 **methods**
