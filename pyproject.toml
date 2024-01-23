@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "sjfirebase"
 version = "1.0.1"
-description = "Port firebase to python"
+description = "Implement Firebase Java SDK in pytho"
 authors = ["Kenechukwu Akubue <kengoon19@gmail.com>"]
 readme = "README.md"
 packages = [{include = "sjfirebase"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-kvdroid = "^0.3.0"
+pyjnius = "^1.6.1"
 
 
 [build-system]
