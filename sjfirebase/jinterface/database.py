@@ -1,5 +1,3 @@
-from typing import Callable
-
 from jnius import PythonJavaClass, java_method
 
 __all__ = ("ValueEventListener", "ChildEventListener")
