@@ -119,7 +119,7 @@ location in this case will come the JSON configuration file downloaded from the 
 ```python
 class sjfirebase.jinterface.google
 
-.OnCompleteListener
+OnCompleteListener
 ```
 Listener called when a Task completes.
 
