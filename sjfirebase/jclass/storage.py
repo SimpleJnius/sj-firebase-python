@@ -1,16 +1,10 @@
-from jnius import JavaClass, MetaJavaClass, JavaMultipleMethod
-from sjfirebase import package_path
+from jnius import autoclass
+from sjfirebase import package
 
 __all__ = ("SJFirebaseStorage", )
 
 
-class SJFirebaseStorage(JavaClass, metaclass=MetaJavaClass):
-    __javaclass__ = f"{package_path}SJFirebaseStorage"
-    get_instance = JavaMultipleMethod(
-        [
-            "()Lcom/google/firebase/storage/FirebaseStorage;",
-            "(Ljava/lang/String;)Lcom/google/firebase/storage/FirebaseStorage;",
-            "(Lcom/google/firebase/FirebaseApp;)Lcom/google/firebase/storage/FirebaseStorage;",
-            "(Lcom/google/firebase/FirebaseApp;Ljava/lang/String;)Lcom/google/firebase/storage/FirebaseStorage;"
-        ]
-    )
+class SJFirebaseStorage:
+    @classmethod
+    def get_instance(cls, *args):
+        return autoclass(f"{package}SJFirebaseStorage").get_instance(*args)

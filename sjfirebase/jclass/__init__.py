@@ -1,4 +1,4 @@
-from .auth import *
+from .emailauth import *
 from .storage import *
 from .firestore import *
 from .database import *

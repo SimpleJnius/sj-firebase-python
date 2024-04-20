@@ -54,7 +54,7 @@ Firebase dynamic link.
 
 #### SJFirebaseAuthEmai
 ```python
-class sjfirebase.jclass.auth.SJFirebaseAuthEmai
+class sjfirebase.jclass.emailauth.SJFirebaseAuthEmail
 ```
 The entry point of the Firebase Authentication SDK.
 First, obtain an instance of this class by calling `get_instance`
