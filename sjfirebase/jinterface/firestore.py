@@ -10,7 +10,7 @@ class EventListener(PythonJavaClass):
     def __init__(self, on_event):
         self.on_event = on_event
 
-    @java_method("(Ljava/lang/Object;com/google/firebase/firestore/FirebaseFirestoreException;)V")
+    @java_method("(Ljava/lang/Object;Lcom/google/firebase/firestore/FirebaseFirestoreException;)V")
     def onEvent(self, value, error):
         self.on_event(value, error)
 

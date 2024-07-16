@@ -35,6 +35,6 @@ class StreamDownloadTaskStreamProcessor(PythonJavaClass):
         self.do_in_background = do_in_background
 
     @java_method("(Lcom/google/firebase/storage/StreamDownloadTask$TaskSnapshot;"
-                 "java/io/InputStream;)V")
+                 "Ljava/io/InputStream;)V")
     def doInBackground(self, state, stream):
         self.do_in_background(state, stream)
