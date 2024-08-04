@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sjfirebase"
-version = "1.3.2"
+version = "1.4.0"
 description = "Implement Firebase Java SDK in python"
 authors = ["Kenechukwu Akubue <kengoon19@gmail.com>"]
 readme = "README.md"
