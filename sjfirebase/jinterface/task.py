@@ -1,6 +1,12 @@
 from jnius import PythonJavaClass, java_method
 
-__all__ = ("OnCompleteListener", "OnCanceledListener", "OnFailureListener", "OnSuccessListener")
+__all__ = (
+    "OnCompleteListener",
+    "OnCanceledListener",
+    "OnFailureListener",
+    "OnSuccessListener",
+    "Continuation"
+)
 
 
 class OnCompleteListener(PythonJavaClass):
@@ -57,3 +63,16 @@ class OnSuccessListener(PythonJavaClass):
             self.callback(obj)
         else:
             self.callback()
+
+
+class Continuation(PythonJavaClass):
+    __javainterfaces__ = ["com/google/android/gms/tasks/Continuation"]
+    __javacontext__ = "app"
+
+    def __init__(self, callback):
+        super().__init__()
+        self.callback = callback
+
+    @java_method('(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;')
+    def then(self, obj):
+        self.callback(obj)
