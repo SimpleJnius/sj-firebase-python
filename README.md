@@ -2,6 +2,10 @@
  Implement Firebase Java SDK in Python
 
  <!-- GitAds-Verify: V1Y658YQ4CT1W7YNRP6RCUDTVARQMDOM -->
+ ## GitAds Sponsored
+[![Sponsored by GitAds](https://gitads.dev/v1/ad-serve?source=simplejnius/sj-firebase-python@github)](https://gitads.dev/v1/ad-track?source=simplejnius/sj-firebase-python@github)
+
+
 
 *[Firebase](https://firebase.google.com/)*
 > Make your app the
