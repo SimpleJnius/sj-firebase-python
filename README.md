@@ -1,7 +1,7 @@
-from turtle import Screen
-
 # sj-firebase-python
  Implement Firebase Java SDK in Python
+
+ <!-- GitAds-Verify: V1Y658YQ4CT1W7YNRP6RCUDTVARQMDOM -->
 
 *[Firebase](https://firebase.google.com/)*
 > Make your app the
