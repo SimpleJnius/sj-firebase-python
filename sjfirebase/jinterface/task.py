@@ -74,5 +74,5 @@ class Continuation(PythonJavaClass):
         self.callback = callback
 
     @java_method('(Lcom/google/android/gms/tasks/Task;)Ljava/lang/Object;')
-    def then(self, obj):
-        self.callback(obj)
+    def then(self, task):
+        return self.callback(task)

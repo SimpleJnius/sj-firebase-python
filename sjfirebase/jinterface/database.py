@@ -1,6 +1,8 @@
 from jnius import PythonJavaClass, java_method
 
-__all__ = ("ValueEventListener", "ChildEventListener")
+__all__ = ("ValueEventListener", "ChildEventListener", "CompletionListener")
+
+from sjfirebase.tools import is_jnull
 
 
 class ValueEventListener(PythonJavaClass):
@@ -30,7 +32,7 @@ class CompletionListener(PythonJavaClass):
         self.on_complete = on_complete
 
     @java_method('(Lcom/google/firebase/database/DatabaseError;'
-                 'Lcom/google/firebase/database/DatabaseReference)V')
+                 'Lcom/google/firebase/database/DatabaseReference;)V')
     def onComplete(self, error, ref):
         self.on_complete(error, ref)
 
@@ -40,6 +42,7 @@ class ChildEventListener(PythonJavaClass):
     __javacontext__ = "app"
 
     def __init__(self, **kwargs):
+        super().__init__()
         self.on_cancelled = kwargs.get("on_cancelled", lambda _: None)
         self.on_child_added = kwargs.get("on_child_added", lambda *_: None)
         self.on_child_moved = kwargs.get("on_child_moved", lambda *_: None)
@@ -77,11 +80,11 @@ class TransactionHandler(PythonJavaClass):
         self.on_complete = on_complete
 
     @java_method("(Lcom/google/firebase/database/MutableData;)"
-                 "Lcom/google/firebase/database/Transaction$Result")
-    def doTransaction(self, current_data):
-        self.do_transaction(current_data)
+                 "Lcom/google/firebase/database/Transaction$Result;")
+    def doTransaction(self, mutable_data):
+        return self.do_transaction(mutable_data)
 
     @java_method('(Lcom/google/firebase/database/DatabaseError;'
-                 'Lcom/google/firebase/database/DataSnapshot)V')
-    def onComplete(self, error, current_data):
-        self.on_complete(error, current_data)
+                 'ZLcom/google/firebase/database/DataSnapshot;)V')
+    def onComplete(self, error, committed, current_data):
+        self.on_complete(error, committed, current_data)

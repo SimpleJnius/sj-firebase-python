@@ -7,7 +7,7 @@ def serialize_map_to_dict(hash_map):
     for key, value in zip(hash_map, hash_map.values()):
         if hasattr(value, "put"):
             map_to_dict_data[key] = serialize_map_to_dict(value)
-        elif hasattr(value, "add"):
+        elif hasattr(value, "iterator"):
             map_to_dict_data[key] = serialize_array_to_list(value)
         else:
             map_to_dict_data[key] = value
@@ -18,7 +18,7 @@ def serialize_array_to_list(array):
     array_to_list_data = []
 
     for value in array:
-        if hasattr(value, "add"):
+        if hasattr(value, "iterator"):
             data = serialize_array_to_list(value)
             array_to_list_data.append(data)
         elif hasattr(value, "put"):
@@ -42,6 +42,15 @@ def serialize_dict_to_map(dictionary):
         elif isinstance(value, bool):
             Boolean = autoclass("java.lang.Boolean")
             dict_to_map_data.put(key, Boolean(value))
+        elif isinstance(value, int):
+            Long = autoclass("java.lang.Long")
+            dict_to_map_data.put(key, Long(value))
+        elif isinstance(value, float):
+            Double = autoclass("java.lang.Double")
+            dict_to_map_data.put(key, Double(value))
+        elif isinstance(value, str):
+            String = autoclass("java.lang.String")
+            dict_to_map_data.put(key, String(value))
         else:
             dict_to_map_data.put(key, value)
     return dict_to_map_data
@@ -105,11 +114,11 @@ def serialize(data, raw_python=False):
         return serialize_dict_to_map(data)
     if isinstance(data, list):
         return serialize_list_to_array(data)
-    if hasattr(data, "add"):
+    if hasattr(data, "iterator"):
         return serialize_array_to_list(data)
     if hasattr(data, "put"):
         return serialize_map_to_dict(data)
-    raise Exception("data must be dict or list or java.util.HashMap or java.util.ArrayList")
+    return data
 
 
 if __name__ == "__main__":
