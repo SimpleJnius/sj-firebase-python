@@ -1,8 +1,6 @@
 from jnius import PythonJavaClass, java_method
 
-__all__ = ("ValueEventListener", "ChildEventListener", "CompletionListener")
-
-from sjfirebase.tools import is_jnull
+__all__ = ("ValueEventListener", "ChildEventListener", "CompletionListener", "TransactionHandler")
 
 
 class ValueEventListener(PythonJavaClass):

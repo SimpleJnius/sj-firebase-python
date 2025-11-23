@@ -1,3 +1,6 @@
+import types
+from itertools import chain
+
 from jnius import autoclass
 
 
@@ -85,11 +88,11 @@ def serialize_list_to_array(list_):
 
 def serialize(data, raw_python=False):
     if raw_python:
-        if not isinstance(data, list):
+        if not isinstance(data, (list, chain, tuple, types.GeneratorType)):
             raise Exception(f"raw `{type(data)}` serialization not supported")
         raw_data = []
         for value in data:
-            if isinstance(value, list):
+            if isinstance(value, (list, tuple)):
                 data = serialize_list_to_array(value)
                 raw_data.append(data)
             elif isinstance(value, dict):

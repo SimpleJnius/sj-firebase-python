@@ -5,9 +5,17 @@ description = "Implement Firebase Java SDK in python"
 authors = ["Kenechukwu Akubue <kengoon19@gmail.com>"]
 readme = "README.md"
 packages = [{include = "sjfirebase"}]
+homepage = "https://github.com/SimpleJnius/sj-firebase-python"
+repository = "https://github.com/SimpleJnius/sj-firebase-python.git"
+documentation = "https://github.com/SimpleJnius/sj-firebase-python/blob/master/README.md"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/SimpleJnius/sj-firebase-python/issues"
+"Source" = "https://github.com/SimpleJnius/sj-firebase-python"
+"Pull Requests" = "https://github.com/SimpleJnius/sj-firebase-python/pulls"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 pyjnius = "^1.6.1"
 
 
